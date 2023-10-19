@@ -1,0 +1,14 @@
+name: hello world
+on: [push]
+
+jobs:
+  build:
+    runs-on: unbutu-latest
+
+    
+    steps:
+    - name: Say Hello
+      run: echo "hello world"
+
+    - name: wait
+      run: sleep 30
