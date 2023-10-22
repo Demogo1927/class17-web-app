@@ -13,14 +13,14 @@ jobs:
     - name: Docker Login
       uses: docker/login-action@v3.0.0
       with:
-          username:${{secrets.USERNAME}}
-          password:${{secrets.PASSWORD}}
+          username: ${{secrets.USERNAME}}
+          password: ${{secrets.PASSWORD}}
           
     - name: Docker Metadata action
-      Id: meta
+      id: meta
       uses: docker/metadata-action@v5.0.0
-      with:
-        images:bakus1/class17
+       with:
+         images:bakus1/class17
     
     - name: Build and push Docker images
       uses: docker/build-push-action@v5.0.0
