@@ -13,4 +13,4 @@ jobs:
     - name: Docker Login
       uses: docker/login-action@v3.0.0
       with:  
-      user: ${{}}
+      user: ${{secrets.}}
