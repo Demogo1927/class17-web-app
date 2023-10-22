@@ -18,14 +18,14 @@ jobs:
           
     - name: Docker Metadata action
     Id: meta
-    uses: docker/metadata-action@v5.0.0
-     with:
-     images:bakus1/class17
+      uses: docker/metadata-action@v5.0.0
+      with:
+        images:bakus1/class17
     
    - name: Build and push Docker images
-    uses: docker/build-push-action@v5.0.0
+     uses: docker/build-push-action@v5.0.0
      with:
-     context: .
-     push: true
-     tags: ${{steps.meta.output.tags}} ##these tags can include tags based on git branches/commits etc.
-     labels:${{steps.meta.output.labels}}
+      context: .
+      push: true
+      tags: ${{steps.meta.output.tags}} ##these tags can include tags based on git branches/commits etc.
+      labels:${{steps.meta.output.labels}}
