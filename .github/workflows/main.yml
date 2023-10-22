@@ -1,18 +1,16 @@
-name: my-simple-workflow
+name: publish docker image
 on: push
 
 jobs:
- build:
-    runs-on: ubuntu-latest
-    steps:
+  publish-docker-image-registry:
+    name: publish and push image to docker
+    run-on: ubuntu-22.04
+    eteps:
+    
     - name: Checkout
       uses: actions/checkout@v4.1.1
-    - name: Docker build
-      run: |
-        echo "Docker building"
-    - name: Docker tag
-      run: |
-        echo "Docker tag our image"
-    - name: Docker push
-      run: |
-        echo "Docker push"
+      
+    - name: Docker Login
+      uses: docker/login-action@v3.0.0
+      with:  
+      user: ${{}}
